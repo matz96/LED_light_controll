@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <header></header>
+    <main>
+    <div id="app">
+  <h1>LED Control</h1>
+  <p>Current color: {{ color }}</p>
+  <label>
+    Select color:
+    <circle-color-picker v-model="color" v-on:change="handleColorChange" />
+  </label>
+</div>
+
+
+    </main>
+    <footer></footer>
+  </body>
+</html>
+
+<!-- In this template, we use the circle-color-picker component to display the color picker and bind it to the color data property using the v-model directive. We also attach the handleColorChange method to the change event of the color picker using the v-on:change directive. This will update the color of the LED and the current color whenever the user selects a new color from the color picker.-->
