@@ -1,5 +1,27 @@
+
+
+
 /* CSS for styling the page */
+
+/*CSS RESET*/
+*, *:before, *:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+html{
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+}
+
 body {
+  position: relative;
+  height: 100%;
+  width: 100%;
   font-family: sans-serif;
 }
 
