@@ -8,10 +8,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="./main.js"></script>
-    <script type="text/javascript" src = "./color-picker.js"></script>
+    <script type="text/javascript" src = "colorjoe.js"></script>
     <script type="text/javascript" src = "./colors.js"></script>
 
     <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./colorjoe.css">
 </head>
 
 
@@ -32,17 +33,12 @@
    <!--     <button id="submit">Set LED Color</button> 
     </div> -->
     
-    <div class="color-picker">
-        <toolcool-color-picker color="rgba(96, 245, 66, 1)"></toolcool-color-picker>
-        <!--input type="color" />
-        <!-- canvas element for the color picker -->
-        <canvas id="color-picker" width="300" height="300"></canvas>
-        <!-- input field for the color value -->
-        <input type="hidden" id="color"-->
-        <!-- button to submit the color value -->
-        <button id="submit">Set LED Color</button>
-      </div>
-       
-    </body>
+    <div id="color-picker"></div>
+    <script>
+      colorjoe.rgb('color-picker').set([255, 255, 255]);
+      
+    </script>
+    
+    
     
 </html>
