@@ -35,9 +35,14 @@
     
     <div id="color-picker"></div>
     <script>
-      colorjoe.rgb('color-picker').set([255, 255, 255]);
+      const joe = colorjoe.rgb('color-picker', 'red', ['currentColor','alpha',['fields', {space: 'RGB', limit: 255, fix: 0}],'hex'])
       
-    </script>
+      const e_body = document.querySelector("body")
+      
+      joe.on("change", color => e_body.style.backgroundColor = color.css());
+      
+      
+      </script>
     
     
     
