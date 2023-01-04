@@ -1,0 +1,27 @@
+/* CSS for styling the page */
+body {
+  font-family: sans-serif;
+}
+
+.color-picker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+label {
+  margin-right: 0.5em;
+}
+
+input[type="range"] {
+  width: 200px;
+}
+
+button {
+  margin-top: 1em;
+  padding: 0.5em 1em;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 0.3em;
+}
