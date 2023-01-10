@@ -11,13 +11,24 @@
 }
 
 .colorPicker {
-    background: #011f70d3;
+    background: #7894e2d3;
     border: 1px solid #BBB;
     -moz-border-radius: .3em;
     border-radius: .3em;
     margin: 1em;
-    display: inline-block;
-    
+    width: 30%;   
+    display: flex; 
+    align-items: center;
+    justify-content: center; 
+}
+
+
+
+
+
+
+.currentColorContainer{
+    display: none;
 }
 
 .colorPicker .extras {
@@ -25,7 +36,7 @@
     margin: 0.5em;
 }
 
-.colorPicker .extras .currentColorContainer {
+.colorPicker .extras  {
     overflow: hidden;
 }
 
