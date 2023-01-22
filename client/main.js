@@ -1,7 +1,5 @@
 
 
-
-
 const axiosGET = axios.create({
     baseURL: "http://localhost:3000/api",
     method: 'get'
@@ -15,8 +13,6 @@ const get_state = async() => {
 }
 
 
-
-
 window.onload = async () => {
     data = await get_state();
     console.log('data', data)
@@ -27,12 +23,23 @@ window.onload = async () => {
     const e_body = document.querySelector("body")
     joe.on("change", color => e_body.style.backgroundColor = color.cssa());
     
+
     colorString = `#${data.red.toString(16).padStart(2, '0')}${data.green.toString(16).padStart(2, '0')}${data.blue.toString(16).padStart(2, '0')}`
-    console.log(data.gain)
+    
     joe.set(colorString)
     joe.setAlpha(data.gain/100.)
 
-    joe.on("done", color => console.log(color.cssa()))
+    
+    joe.on("done", color => {
+        const red = Math.floor(255*color.red())
+        const green = Math.floor(255*color.green())
+        const blue = Math.floor(255*color.blue())
+        
+        setIntensity(Math.floor(joe.getAlpha()*100))
+        setColor("red",red)
+        setColor("green",green)
+        setColor("blue",blue)
+    })
 
     const on_but = document.getElementById("ON");
     on_but.addEventListener("click", function () {
@@ -49,4 +56,12 @@ window.onload = async () => {
         axiosGET.get("?turn=toggle")
     });
 
+}
+
+async function setColor(color, value){
+    const response = await axiosGET.get(`?${color}=${value}`)
+}
+
+async function setIntensity(value){
+    const response = await axiosGET.get(`?intensity=${value}`)
 }
