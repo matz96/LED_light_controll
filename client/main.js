@@ -10,14 +10,24 @@ const axiosGET = axios.create({
 
 
 const get_state = async() => {
-    const state = await axiosGET.get('');
+    const state = await axiosGET.get();
     const data = await state.json();
+   
     const status = data.status;
     const Red = data.Red;
     const Blue = data.Blue;
     const Green = data.Green;
     const Alpha = data.Alpha;
     return data;
+}
+
+
+const set_state = async() => {
+    await axiosGET.get();
+
+
+
+
 }
 
 
