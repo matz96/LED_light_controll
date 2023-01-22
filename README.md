@@ -15,7 +15,8 @@ Es wurden zwei Applikationen, eine client- sowie eine serverseitige Applikation,
 
 ### Client
 
-Der Client besteht aus einem intuitiven UI-Design mit drei Buttons, die jeweils die LED's ein, aus oder toggeln können. Darüber befindet sich ein Color picker. Dieser besteht aus einer 2D-color color plane, die auf dem HSL-Farbsystem beruht. Hier kann der Farbton feineingestellt werden. Rechts daneben gibt es zwei vertikale slider. Auf dem ersten findet die grobe Einstellung der Farbe statt. Auf dem zweiten kann die Helligkeit zwischen 0% und 100% eingestellt werden. Nochmals weiter rechts gibt es noch drei Eingabefelder für den Anteil der Farben Rot, Grün und Blau. Der Wertebereich liegt hierbei zwischen 0 und 256. Und zu guter Letzt gibt es unten rechts noch ein Eingabefeld für einen Hexadezimal wert. Dieser Wert muss natürlich zwischen \#000000 und \#ffffff.
+Der Client besteht aus einem intuitiven UI-Design mit drei Buttons, die jeweils die LED's ein, aus oder toggeln können. Darüber befindet sich ein Color picker. Dieser besteht aus einer 2D-color color plane, die auf dem HSL-Farbsystem beruht. Hier kann der Farbton feineingestellt werden. Rechts daneben gibt es zwei vertikale slider. Auf dem ersten findet die grobe Einstellung der Farbe statt. Auf dem zweiten kann die Helligkeit zwischen 0% und 100% eingestellt werden. Bei diesen drei Einstellungen geht der API-call erst raus, nachdem die Maustaste losgelassen wird. Auch wenn sich der Hintergrund zuvor schon verändert.
+ Nochmals weiter rechts gibt es noch drei Eingabefelder für den Anteil der Farben Rot, Grün und Blau. Der Wertebereich liegt hierbei zwischen 0 und 256. Und zu guter Letzt gibt es unten rechts noch ein Eingabefeld für einen Hexadezimal wert. Dieser Wert muss natürlich zwischen \#000000 und \#ffffff. Bei allen Eingabefelder muss die Eingabe noch mit Tab bestätigt werden. Ansonsten wird der API-call nicht gesendet.
 
 ### Server
 
