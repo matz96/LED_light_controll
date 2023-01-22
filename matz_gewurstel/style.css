@@ -25,7 +25,7 @@ body {
   font-family: sans-serif;
 }
 
-.color-picker {
+#color-picker {
   position: relative;
   top: 50%;
   left: 50%;
@@ -42,15 +42,24 @@ input[type="range"] {
   width: 200px;
 }
 
-
+#buttons {
+  position: relative;
+  top: 100%;
+  left: 50%;
+  translate: -20% -50%;
+  justify-content: space-around;
+}
 
 button {
+  position: relative;
+  
   margin-top: 1em;
   padding: 0.5em 1em;
-  background-color: #4caf50;
+  background-color: #7894e2d3;
   color: white;
   border: none;
   border-radius: 0.3em;
   
   align-items: center;
+  
 }
