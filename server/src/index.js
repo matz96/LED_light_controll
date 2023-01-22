@@ -67,12 +67,9 @@ app.get('/api', async (req, res) => {
 });
 
 app.get('/', (req, res) => {
-  res.send('hello');
+  res.send('Please go to /api for api access');
 });
 
-app.get('/api/commands', (req, res) => {
-  res.send(commandArray);
-});
 
 app.listen(port, () => {
   console.log(`Linux Commands available on ${port}`);
