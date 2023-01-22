@@ -26,9 +26,12 @@ body {
 }
 
 .color-picker {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+
+
 }
 
 label {
@@ -48,4 +51,6 @@ button {
   color: white;
   border: none;
   border-radius: 0.3em;
+  
+  align-items: center;
 }

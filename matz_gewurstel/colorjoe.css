@@ -11,6 +11,8 @@
 }
 
 .colorPicker {
+    min-width: 600px;
+    min-height: 400px;
     background: #7894e2d3;
     border: 1px solid #BBB;
     -moz-border-radius: .3em;
@@ -18,8 +20,8 @@
     margin: 1em;
     width: 30%;   
     display: flex; 
-    align-items: center;
-    justify-content: center; 
+   
+    justify-content: space-around; 
 }
 
 
@@ -61,6 +63,7 @@
 .colorPicker .extras .colorFields input {
     width: 40px;
     margin-left: 0.5em;
+    align-items: right;
 }
 
 .colorPicker .extras .hex {
@@ -77,6 +80,7 @@
 }
 
 /* main dimensions */
+/*color plane size */
 .colorPicker .twod, .colorPicker .twod .bg {
     width: 400px;
     height: 400px;
