@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-
-
 <head>
     <title>RGB LED Control</title>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script type="text/javascript" src="./main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script type="text/javascript" src="./colorjoe.js"></script>
-    <script type="text/javascript" src="./colors.js"></script>
+    <!-- <script type="text/javascript" src="./colors.js"></script> -->
+    <script type="text/javascript" src="./main.js"></script>
+    
 
     <link rel="stylesheet" href="./style.css" />
     <link rel="stylesheet" href="./colorjoe.css">
@@ -18,11 +18,8 @@
 
 <body>
 
-
     <div class="center-wrapper">
-        <div id="color-picker"> 
-            <script>const joe = colorjoe.rgb('color-picker', 'red', ['currentColor', 'alpha', ['fields', { space: 'RGB', limit: 255, fix: 0 }], 'hex']) 
-            console.log(joe)</script>
+        <div id="color-picker">
         </div>
         <div class="buttons-wrapper">
             <button id="ON">ON</button>
@@ -31,7 +28,6 @@
         </div>
     </div>
 
-
 </body>
- 
+
 </html>

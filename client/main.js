@@ -1,13 +1,11 @@
-import colorjoe from "./colorjoe";
-import colors from "colors.js"
-import axios from "https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js";
+
+
+
 
 const axiosGET = axios.create({
-
     baseURL: "http://localhost:3000/api",
-  
-    method: 'get'
-  
+    method: 'get',
+    headers: {'Access-Control-Allow-Origin': '*'}
   })
 
 
@@ -19,7 +17,6 @@ const get_state = async() => {
     const Blue = data.Blue;
     const Green = data.Green;
     const Alpha = data.Alpha;
-    //const joe = colorjoe.rgb('color-picker', (Red,Blue,Green), ['currentColor','alpha',['fields', {space: 'RGB', limit: 255, fix: 0}],'hex'])
     return data;
 }
 
@@ -28,14 +25,16 @@ const get_state = async() => {
 
 window.onload = () => {
     data = get_state();
-    const status = data.status;
-    
+    //const status = data.status;
+    console.log('data', data)
     
     const e_body = document.querySelector("body")
-    //joe hierhin und dann setchild auf color-picker div
+    const joe = colorjoe.rgb('color-picker', 'red', ['currentColor', 'alpha', ['fields', { space: 'RGB', limit: 255, fix: 0 }], 'hex']) 
+    const e_colorPicker = document.querySelector("#color-picker")
+    
     joe.on("change", color => e_body.style.backgroundColor = color.cssa());
     
-    console.log(joe.get())
+    
 
     const on_but = document.getElementById("ON");
     on_but.addEventListener("click", function () {

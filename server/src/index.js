@@ -29,7 +29,16 @@ const port = 3000;
 
 app.use(express.json());
 
-//api endpoints
+//cross origin middleware
+app.use((_, res, next) => {
+  res.setHeader('access-control-allow-origin', '*');
+  res.setHeader('access-control-allow-headers',
+    'Origin, X-Requested-With, Content-Type, Accept');
+  return next();
+});
+
+
+//api endpoint
 app.get('/api', async (req, res) => {
   if (req.query.transitionTime) {
     setTransitionTime(req.query.transitionTime);
@@ -124,3 +133,4 @@ async function getStatus() {
     console.error(error);
   }
 }
+

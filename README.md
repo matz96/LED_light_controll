@@ -19,15 +19,15 @@ Unter dem /api Endpoint wird die gesamte API zur Vefügung gestellt.
 Die API verfügt über einen einzigen Endpoint unter /api. Sämtliche Kommunikation erfolgt vom Client über einen GET-Request mit diversen Query-Parametern. Diese sind 
 1. turn
 - Parameter: on, off, toggle
-1. transitionTime
-- Parameter: Zeit für Änderung, 0..5000ms
-1. red
+2. transitionTime
+- Parameter: Zeit für Änderung eines Parameters, 0..5000ms
+3. red
 - Parameter: Helligkeit rote LED, 0-255
-1. green
+4. green
 - Parameter: Helligkeit grüne LED, 0-255
-1. blue
+5. blue
 - Parameter: Helligkeit blaue LED, 0-255
-1. getStatus
+6. getStatus
 - Parameter: NaN, gibt sämtliche lichtspezifischen Antworten des Shelly's zurück. 
 
 
