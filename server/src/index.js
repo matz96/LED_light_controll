@@ -11,9 +11,11 @@
 import express from 'express';
 import axios from 'axios';
 
+//credentials for accessing shelly, very secure!
 const shellyUser = 'admin';
 const shellyPassword = 'password';
-const baseURL = 'http://192.168.1.123';
+
+const baseURL = 'http://192.168.0.123';
 
 //create axios instances for less writing work later
 const authGET = axios.create({
@@ -22,32 +24,19 @@ const authGET = axios.create({
   auth: { username: shellyUser, password: shellyPassword }
 });
 
-const authPOST = axios.create({
-  baseURL: baseURL,
-  method: 'post',
-  auth: { username: shellyUser, password: shellyPassword }
-});
-
-//import fs from "fs"
-
-//credentials for accessing shelly, very secure!
-
-//fs.writeFileSync('./log.json', "")
-
 const app = express();
 const port = 3000;
 
 app.use(express.json());
 
+//api endpoints
 app.get('/api', async (req, res) => {
   if (req.query.transitionTime) {
     setTransitionTime(req.query.transitionTime);
   }
-
   if (req.query.turn) {
     turn(req.query.turn);
   }
-
   if (req.query.red) {
     setColor('red', req.query.red);
   }
@@ -60,9 +49,7 @@ app.get('/api', async (req, res) => {
   if (req.query.intensity) {
     setIntensity(req.query.intensity);
   }
-
   const response = await getStatus();
-
   res.send(response.lights[0]);
 });
 
@@ -70,13 +57,11 @@ app.get('/', (req, res) => {
   res.send('Please go to /api for api access');
 });
 
-
 app.listen(port, () => {
   console.log(`Linux Commands available on ${port}`);
 });
 
 //All functions - defined with function keyword for automatic hoisting
-
 async function turn(request) {
   try {
     const response = await authGET.get(`/color/0?turn=${request}`);
@@ -93,7 +78,6 @@ async function setColor(color, value) {
   if (value > 255) {
     value = 255;
   }
-
   try {
     const response = await authGET.get(`/color/0?${color}=${value}`);
     return response.data;
@@ -109,7 +93,6 @@ async function setIntensity(intensity) {
   if (intensity > 100) {
     intensity = 100;
   }
-
   try {
     const response = await authGET.get(`/color/0?gain=${intensity}`);
     return response.data;
@@ -125,7 +108,6 @@ async function setTransitionTime(time) {
   if (time > 5000) {
     time = 5000;
   }
-
   try {
     const response = await authGET.get(`settings/color/0?transition=${time}`);
     return response.data;
@@ -142,5 +124,3 @@ async function getStatus() {
     console.error(error);
   }
 }
-
-//TryCatch middleware could go here
