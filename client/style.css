@@ -1,0 +1,68 @@
+
+
+
+/* CSS for styling the page */
+
+/*CSS RESET*/
+*, *:before, *:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+html{
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+}
+
+body {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  font-family: sans-serif;
+}
+
+.center-wrapper {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+}
+
+#color-picker{
+  position: relative;
+  left: 50%;
+  translate: -50% 0;
+}
+
+label {
+  margin-right: 0.5em;
+}
+
+input[type="range"] {
+  width: 200px;
+}
+
+.buttons-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+button {
+  position: relative;
+  
+  margin-top: 1em;
+  padding: 0.5em 1em;
+  background-color: #7894e2d3;
+  color: white;
+  border: none;
+  border-radius: 0.3em;
+  
+  align-items: center;
+  
+}
