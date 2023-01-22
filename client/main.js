@@ -40,10 +40,11 @@ window.onload = () => {
     
     const e_body = document.querySelector("body")
     const joe = colorjoe.rgb('color-picker', 'red', ['currentColor', 'alpha', ['fields', { space: 'RGB', limit: 255, fix: 0 }], 'hex']) 
+    joe.set()
     const e_colorPicker = document.querySelector("#color-picker")
     
     joe.on("change", color => e_body.style.backgroundColor = color.cssa());
-    
+    joe.on("done",color =>  )
     
 
     const on_but = document.getElementById("ON");
