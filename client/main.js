@@ -11,12 +11,6 @@ const axiosGET = axios.create({
 const get_state = async() => {
     const state = await axiosGET.get();
     const data = await state.data;
-   
-    // const ison = data.ison;
-    // const red = data.red;
-    // const blue = data.blue;
-    // const green = data.green;
-    // //const alpha = data.alpha;
     return data;
 }
 
@@ -26,43 +20,33 @@ const get_state = async() => {
 window.onload = async () => {
     data = await get_state();
     console.log('data', data)
-
-
-
     
+    //init joe object
+    const joe = colorjoe.rgb('color-picker', 'red', ['currentColor', 'alpha', ['fields', { space: 'RGB', limit: 255, fix: 0 }], 'hex']) 
     
     const e_body = document.querySelector("body")
-    const joe = colorjoe.rgb('color-picker', 'red', ['currentColor', 'alpha', ['fields', { space: 'RGB', limit: 255, fix: 0 }], 'hex']) 
-    joe.set()
-    const e_colorPicker = document.querySelector("#color-picker")
-    
     joe.on("change", color => e_body.style.backgroundColor = color.cssa());
-    joe.set("#102030")
-    joe.setAlpha(0.5)
-    console.log(joe.get())
+    
+    colorString = `#${data.red.toString(16).padStart(2, '0')}${data.green.toString(16).padStart(2, '0')}${data.blue.toString(16).padStart(2, '0')}`
+    console.log(data.gain)
+    joe.set(colorString)
+    joe.setAlpha(data.gain/100.)
 
-    joe.on("done", () => console.log(joe.get()))
+    joe.on("done", color => console.log(color.cssa()))
 
     const on_but = document.getElementById("ON");
     on_but.addEventListener("click", function () {
-       axiosGET.get()
+       axiosGET.get("?turn=on")
     });
 
     const off_but = document.getElementById("OFF");
     off_but.addEventListener("click", function () {
-        const xhr = new XMLHttpRequest();
-        xhr.open("GET", "localhost:3000/api", true);
-        xhr.send();
+        axiosGET.get("?turn=off")
     });
 
     const toggle = document.getElementById("Toggle");
     toggle.addEventListener("click", function () {
-        const xhr = new XMLHttpRequest();
-        const toggle = status;
-        const url =
-
-        xhr.open("GET", "http://localhost/", true);
-        xhr.send();
+        axiosGET.get("?turn=toggle")
     });
 
 }

@@ -59,6 +59,7 @@ app.get('/api', async (req, res) => {
     setIntensity(req.query.intensity);
   }
   const response = await getStatus();
+  console.log(response)
   res.send(response.lights[0]);
 });
 
