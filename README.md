@@ -55,4 +55,4 @@ Server-Applikation: Cyril Odermatt
 
 MIT-Lizenz
 
-![Sever/Client übersicht](/home/matz/SynologyDrive/FHNW/wlw/wlw_projekt/wlw_projekt/Uebersicht.png)
+![Sever/Client übersicht](Uebersicht.png)
