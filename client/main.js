@@ -12,15 +12,19 @@ const axiosGET = axios.create({
 
 
 const get_state = async() => {
-    const state = await axiosGET.get('');
+    const state = await axiosGET.get();
     const data = await state.json();
-    const status = data.status;
-    const Red = data.Red;
-    const Blue = data.Blue;
-    const Green = data.Green;
-    const Alpha = data.Alpha;
-    //const joe = colorjoe.rgb('color-picker', (Red,Blue,Green), ['currentColor','alpha',['fields', {space: 'RGB', limit: 255, fix: 0}],'hex'])
+   
     return data;
+}
+
+
+const set_state = async() => {
+    await axiosGET.get();
+
+
+
+
 }
 
 
@@ -29,10 +33,20 @@ const get_state = async() => {
 window.onload = () => {
     data = get_state();
     const status = data.status;
+    const red = data.Red;
+    const blue = data.Blue;
+    const green = data.Green;
+    const alpha = data.Alpha;
+   
+    
     
     
     const e_body = document.querySelector("body")
     //joe hierhin und dann setchild auf color-picker div
+    const joe = colorjoe.rgb('color-picker', 'red', ['currentColor', 'alpha', ['fields', { space: 'RGB', limit: 255, fix: 0 }], 'hex']);
+    const picker = document.getElementById("color-picker");
+    picker.appendChild(joe);
+    
     joe.on("change", color => e_body.style.backgroundColor = color.cssa());
     
     console.log(joe.get())
