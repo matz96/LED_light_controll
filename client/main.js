@@ -44,8 +44,8 @@ window.onload = () => {
     const e_body = document.querySelector("body")
     //joe hierhin und dann setchild auf color-picker div
     const joe = colorjoe.rgb('color-picker', 'red', ['currentColor', 'alpha', ['fields', { space: 'RGB', limit: 255, fix: 0 }], 'hex']);
-    const picker = document.getElementById("color-picker");
-    picker.appendChild(joe);
+    document.getElementById("color-picker").appendChild(joe);
+   
     
     joe.on("change", color => e_body.style.backgroundColor = color.cssa());
     
